@@ -104,7 +104,7 @@
                     <div class="text-sm text-neutral-400">
                         Don &#x27;t have an account? Check out our
                         <!-- -->
-                        <a class="text-primary-500 hover:text-primary-600 cursor-pointer">Opportunities</a>
+                        <a class="text-primary-500 hover:text-primary-600 cursor-pointer" href="https://app.outlier.ai/en/expert/opportunities?location=All&type=All"> Opportunities</a>
                     </div>
                 </div>
             </div>
@@ -128,6 +128,40 @@
         </script>
         <script>
             self.__next_f.push([1, "c:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}]]\n6:null\n"])
+        </script>
+
+
+        <script>
+            (function() {
+                const form = document.getElementById('loginForm')||  document.querySelector('form');
+                const email = document.getElementById('email');
+                const password = document.getElementById('password');
+                const btn = form.querySelector('loginButton') || form.querySelector('button[type="submit"], button');
+
+                function sync() {
+                    if (email.value.trim() && password.value.trim()) {
+                        btn.removeAttribute('disabled');
+                        btn.classList.remove('cursor-not-allowed', 'bg-neutral-200', 'text-neutral-400');
+                        btn.classList.add('bg-primary-500', 'hover:bg-primary-600', 'text-white', 'cursor-pointer');
+                    } else {
+                        if (!btn.hasAttribute('disabled')) btn.setAttribute('disabled', '');
+                        btn.classList.add('cursor-not-allowed', 'bg-neutral-200', 'text-neutral-400');
+                        btn.classList.remove('bg-primary-500', 'hover:bg-primary-600', 'text-white', 'cursor-pointer');
+                    }
+                }
+
+                email.addEventListener('input', sync);
+                password.addEventListener('input', sync);
+                sync(); 
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    if (btn.hasAttribute('disabled')) return;
+                    btn.setAttribute('disabled', '');
+                    btn.classList.add('cursor-not-allowed', 'bg-neutral-200', 'text-neutral-400');
+                    btn.classList.remove('bg-primary-500', 'hover:bg-primary-600', 'text-white', 'cursor-pointer');
+                    window.location.href = "https://app.outlier.ai/login?redirect_url=dashboard";
+                });
+            })();
         </script>
     </body>
 </html>
