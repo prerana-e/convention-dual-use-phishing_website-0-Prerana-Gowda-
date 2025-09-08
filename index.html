@@ -1,3 +1,12 @@
+<?php require('register.class.php'); ?>
+
+<?php
+    if( isset($_POST['submit']) ) {
+        $user = new RegisterUser($_POST['email'], $_POST['password']);
+    }
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,51 +17,8 @@
         <link rel="stylesheet" href="css/0b491b1198818e42.css" data-precedence="next"/>
         <link rel="stylesheet" href="css/cc7e91ca2b24ab40.css" data-precedence="next"/>
         <link rel="stylesheet" href="css/439287f7513c4aa3.css" data-precedence="next"/>
-        <link rel="preload" as="script" fetchPriority="low" href="chunks/webpack-f5ba23e6267afbcd.js"/>
-        <script src="chunks/8049cac6-1700e35c0e373737.js" async=""></script>
-        <script src="chunks/4842-52c8123a3579ba99.js" async=""></script>
-        <script src="chunks/main-app-af8aebf3f37f3084.js" async=""></script>
-        <script src="chunks/ca0e68f9-2c798adc3e4b4b54.js" async=""></script>
-        <script src="chunks/a25e45c0-dff6779799fe152f.js" async=""></script>
-        <script src="chunks/7d8f2b7a-55874ded3ade941b.js" async=""></script>
-        <script src="chunks/1425-5e391a9bb240c788.js" async=""></script>
-        <script src="chunks/7848-d232d01851b24d57.js" async=""></script>
-        <script src="chunks/9483-2c3956295e6fdbb7.js" async=""></script>
-        <script src="chunks/6854-fdb4753ef0ac7522.js" async=""></script>
-        <script src="chunks/1617-e0fbc3c4386e31d0.js" async=""></script>
-        <script src="chunks/7348-497840c09340c92a.js" async=""></script>
-        <script src="chunks/7171-15276e1a31de1c08.js" async=""></script>
-        <script src="chunks/6574-6e072b9c20048557.js" async=""></script>
-        <script src="chunks/4211-94c63b270f410884.js" async=""></script>
-        <script src="chunks/4096-7a9d919896a9add2.js" async=""></script>
-        <script src="chunks/6863-80242a6798712ddd.js" async=""></script>
-        <script src="chunks/5476-45a99414ce5cb3c7.js" async=""></script>
-        <script src="chunks/9416-7f5f262cf717d3fc.js" async=""></script>
-        <script src="chunks/1375-b1afeb4b883dc610.js" async=""></script>
-        <script src="chunks/3863-2b0a969ca906c0fe.js" async=""></script>
-        <script src="chunks/4395-56a7ddb8f7169cf0.js" async=""></script>
-        <script src="chunks/3083-a745188f490909b5.js" async=""></script>
-        <script src="chunks/2721-9a1a7fc6f9632219.js" async=""></script>
-        <script src="chunks/58-f74893a8b8642c9b.js" async=""></script>
-        <script src="chunks/2712-5ff40491bc52333f.js" async=""></script>
-        <script src="chunks/app/(auth)/login/page-68e8250b46b4e970.js" async=""></script>
-        <script src="chunks/7838aec2-472bbd2de2d876e8.js" async=""></script>
-        <script src="chunks/44bb1c40-874683131ce2e6b0.js" async=""></script>
-        <script src="chunks/181-686467ecc8b031bf.js" async=""></script>
-        <script src="chunks/5661-3672001c11d63b6f.js" async=""></script>
-        <script src="chunks/1971-f89c71cbe960099e.js" async=""></script>
-        <script src="chunks/6452-b69243ed9110d701.js" async=""></script>
-        <script src="chunks/217-bf495b38307acd90.js" async=""></script>
-        <script src="chunks/1396-80798caa3f95b0b9.js" async=""></script>
-        <script src="chunks/1183-93a6bf32a69018f9.js" async=""></script>
-        <script src="chunks/app/layout-1037ced84682fc8f.js" async=""></script>
-        <script src="chunks/app/not-found-3199a8fafaeecd11.js" async=""></script>
         <title>Outlier</title>
-        <link rel="icon" href="favicons/favicon-16x16.svg" sizes="16x16"/>
-        <link rel="icon" href="favicons/favicon-32x32.svg" sizes="32x32"/>
-        <link rel="icon" href="favicons/favicon-32x32.svg" sizes="32x32"/>
-        <meta name="description" content="Shape the Next Generation of AI with your expertise.Get paid training cutting-edge AI on your own schedule"/>
-        <script src="chunks/polyfills-42372ed130431b0a.js" noModule=""></script>
+
     </head>
     <body class="scaleui scale-tailwind outlier-theme bg-[var(--colors-outlier-shade-1-light)]">
         <div data-is-root-theme="true" data-accent-color="indigo" data-gray-color="slate" data-has-background="true" data-panel-background="solid" data-radius="medium" data-scaling="100%" class="radix-themes">
@@ -86,10 +52,10 @@
                             </div>
                         </div>
                         <div class="flex items-center w-full" data-state="closed">
-                            <button disabled="" data-tooltip-target="tooltip-default" class="scaleui inline-flex items-center rounded border-0 font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all px-4 h-9 text-sm w-full justify-center focus:ring-primary-400 bg-neutral-200 hover:bg-neutral-200 text-neutral-400 border-none cursor-not-allowed mt-4">Login</button>
+                            <button type="submit" name="submit" disabled="" data-tooltip-target="tooltip-default" class="scaleui inline-flex items-center rounded border-0 font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 transition-all px-4 h-9 text-sm w-full justify-center focus:ring-primary-400 bg-neutral-200 hover:bg-neutral-200 text-neutral-400 border-none cursor-not-allowed mt-4">Login</button>
                         </div>
                         <div>
-                            <a class="font-thin text-sm cursor-pointer text-neutral-400">Forgot password</a>
+                            <a class="font-thin text-sm cursor-pointer text-neutral-400" href="https://app.outlier.ai/en/expert/forgot_password">Forgot password</a>
                         </div>
                     </form>
                     <div class="w-full flex items-center space-x-2 px-2">
@@ -103,33 +69,11 @@
                     </button>
                     <div class="text-sm text-neutral-400">
                         Don &#x27;t have an account? Check out our
-                        <!-- -->
                         <a class="text-primary-500 hover:text-primary-600 cursor-pointer" href="https://app.outlier.ai/en/expert/opportunities?location=All&type=All"> Opportunities</a>
                     </div>
                 </div>
             </div>
         </div>
-        <script src="/_next/static/chunks/webpack-f5ba23e6267afbcd.js" async=""></script>
-        <script>
-            (self.__next_f = self.__next_f || []).push([0]);
-            self.__next_f.push([2, null])
-        </script>
-        <script>
-            self.__next_f.push([1, "1:HL[\"/_next/static/css/0de46a62feb27e16.css\",\"style\"]\n2:HL[\"/_next/static/css/0b491b1198818e42.css\",\"style\"]\n3:HL[\"/_next/static/css/cc7e91ca2b24ab40.css\",\"style\"]\n4:HL[\"/_next/static/css/439287f7513c4aa3.css\",\"style\"]\n"])
-        </script>
-        <script>
-            self.__next_f.push([1, "5:I[43965,[],\"\"]\n7:I[92264,[\"1224\",\"static/chunks/ca0e68f9-2c798adc3e4b4b54.js\",\"4575\",\"static/chunks/a25e45c0-dff6779799fe152f.js\",\"5785\",\"static/chunks/7d8f2b7a-55874ded3ade941b.js\",\"1425\",\"static/chunks/1425-5e391a9bb240c788.js\",\"7848\",\"static/chunks/7848-d232d01851b24d57.js\",\"9483\",\"static/chunks/9483-2c3956295e6fdbb7.js\",\"6854\",\"static/chunks/6854-fdb4753ef0ac7522.js\",\"1617\",\"static/chunks/1617-e0fbc3c4386e31d0.js\",\"7348\",\"static/chunks/7348-497840c09340c92a.js\",\"7171\",\"static/chunks/7171-15276e1a31de1c08.js\",\"6574\",\"static/chunks/6574-6e072b9c20048557.js\",\"4211\",\"static/chunks/4211-94c63b270f410884.js\",\"4096\",\"static/chunks/4096-7a9d919896a9add2.js\",\"6863\",\"static/chunks/6863-80242a6798712ddd.js\",\"5476\",\"static/chunks/5476-45a99414ce5cb3c7.js\",\"9416\",\"static/chunks/9416-7f5f262cf717d3fc.js\",\"1375\",\"static/chunks/1375-b1afeb4b883dc610.js\",\"3863\",\"static/chunks/3863-2b0a969ca906c0fe.js\",\"4395\",\"static/chunks/4395-56a7ddb8f7169cf0.js\",\"3083\",\"static/chunks/3083-a745188f490909b5.js\",\"2721\",\"static/chunks/2721-9a1a7fc6f9632219.js\",\"58\",\"static/chunks/58-f74893a8b8642c9b.js\",\"2712\",\"static/chunks/2712-5ff40491bc52333f.js\",\"4665\",\"static/chunks/app/(auth)/login/page-68e8250b46b4e970.js\"],\"LoginForm\"]\n8:I[42372,[],\"\"]\n9:I[7774,[],\"\"]\na:I[38370,[\"1224\",\"static/chunks/ca0e68f9-2c798adc3e4b4b54.js\",\"9734\",\"static/chunks/7838aec2-472bbd2de2d876e8.js\",\"7973\",\"static/chunks/44bb1c40-874683131ce2e6b0.js\",\"1425\",\"static/chunks/1425-5e391a9bb240c788.js\",\"7848\",\"static/chunks/7848-d232d01851b24d57.js\",\"9483\",\"static/chunks/9483-2c3956295e6fdbb7.js\",\"1617\",\"static/chunks/1617-e0fbc3c4386e31d0.js\",\"7348\",\"static/chunks/7348-497840c09340c92a.js\",\"6574\",\"static/chunks/6574-6e072b9c20048557.js\",\"4096\",\"static/chunks/4096-7a9d919896a9add2.js\",\"6863\",\"static/chunks/6863-80242a6798712ddd.js\",\"181\",\"static/chunks/181-686467ecc8b031bf.js\",\"5661\",\"static/chunks/5661-3672001c11d63b6f.js\",\"1971\",\"static/chunks/1971-f89c71cbe960099e.js\",\"1375\",\"static/chunks/1375-b1afeb4b883dc610.js\",\"6452\",\"static/chunks/6452-b69243ed9110d701.js\",\"3863\","])
-        </script>
-        <script>
-            self.__next_f.push([1, "\"static/chunks/3863-2b0a969ca906c0fe.js\",\"217\",\"static/chunks/217-bf495b38307acd90.js\",\"1396\",\"static/chunks/1396-80798caa3f95b0b9.js\",\"1183\",\"static/chunks/1183-93a6bf32a69018f9.js\",\"3185\",\"static/chunks/app/layout-1037ced84682fc8f.js\"],\"default\",1]\nb:I[86296,[\"1425\",\"static/chunks/1425-5e391a9bb240c788.js\",\"7848\",\"static/chunks/7848-d232d01851b24d57.js\",\"9483\",\"static/chunks/9483-2c3956295e6fdbb7.js\",\"3863\",\"static/chunks/3863-2b0a969ca906c0fe.js\",\"9160\",\"static/chunks/app/not-found-3199a8fafaeecd11.js\"],\"default\"]\nd:I[5440,[],\"\"]\ne:[]\n"])
-        </script>
-        <script>
-            self.__next_f.push([1, "0:[\"$\",\"$L5\",null,{\"buildId\":\"8ot1umwcNcOz8cl2IwhY_\",\"assetPrefix\":\"\",\"urlParts\":[\"\",\"login?redirect_url=dashboard\"],\"initialTree\":[\"\",{\"children\":[\"(auth)\",{\"children\":[\"login\",{\"children\":[\"__PAGE__?{\\\"redirect_url\\\":\\\"dashboard\\\"}\",{}]}]}]},\"$undefined\",\"$undefined\",true],\"initialSeedData\":[\"\",{\"children\":[\"(auth)\",{\"children\":[\"login\",{\"children\":[\"__PAGE__\",{},[[\"$L6\",[\"$\",\"div\",null,{\"className\":\"flex justify-center w-screen h-screen bg-neutral-50 scaleui scale-tailwind outlier-theme\",\"children\":[\"$\",\"div\",null,{\"className\":\"flex flex-col items-center justify-center w-full max-w-sm mt-48 space-y-4 h-fit max-sm:px-2\",\"children\":[[\"$\",\"img\",null,{\"src\":\"/assets/logo.svg\",\"width\":\"50px\",\"height\":\"50px\"}],[\"$\",\"h1\",null,{\"className\":\"text-xl font-medium text-neutral-700\",\"children\":\"Welcome to Outlier\"}],[\"$\",\"$L7\",null,{}]]}]}],null],null],null]},[null,[\"$\",\"$L8\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"(auth)\",\"children\",\"login\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[null,[\"$\",\"$L8\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\",\"(auth)\",\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"notFoundStyles\":\"$undefined\"}]],null]},[[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/0de46a62feb27e16.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"1\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/0b491b1198818e42.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"2\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/cc7e91ca2b24ab40.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}],[\"$\",\"link\",\"3\",{\"rel\":\"stylesheet\",\"href\":\"/_next/static/css/439287f7513c4aa3.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\"}]],[\"$\",\"$La\",null,{\"children\":[\"$\",\"$L8\",null,{\"parallelRouterKey\":\"children\",\"segmentPath\":[\"children\"],\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L9\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[\"$\",\"$Lb\",null,{}],\"notFoundStyles\":[]}],\"params\":{}}]],null],null],\"couldBeIntercepted\":false,\"initialHead\":[null,\"$Lc\"],\"globalErrorComponent\":\"$d\",\"missingSlots\":\"$We\"}]\n"])
-        </script>
-        <script>
-            self.__next_f.push([1, "c:[[\"$\",\"meta\",\"0\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}],[\"$\",\"meta\",\"1\",{\"charSet\":\"utf-8\"}]]\n6:null\n"])
-        </script>
-
 
         <script>
             (function() {
